@@ -1,0 +1,102 @@
+body {
+    font-family: "Kodchasan", sans-serif;
+    font-size: 16px;
+    color: white;
+}
+
+.weather-app {
+    background-color: #82c0ba;
+    border: 1px solid #d3d3d3;
+    padding: 40px;
+    margin: 30px;
+    max-width: 640px;
+    max-height: 400px;
+    border-radius: 10px;
+}
+
+ul {
+    list-style: none;
+}
+
+h1 {
+    padding: 4px;
+    font-size: 32px;
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 14px;
+}
+
+.time {
+    font-size: 16px;
+    margin-left: 14px;
+    font-weight: bold;
+}
+
+.max-min {
+    font-size: 12px;
+    margin-left: 36px;
+    margin-top: 15px;
+}
+
+.current-location {
+    display: inline;
+    width: 10%;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 2px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 4px;
+    transition-duration: 0.4s;
+}
+
+.current-location:hover {
+    background-color: #d3d3d3;
+    box-shadow: 0 2px 2px 0 rgb(211, 211, 211), 0 2px 2px 0 rgb(211, 211, 211);
+}
+
+.search-form {
+    width: 70%;
+    display: inline;
+}
+
+.submit-box {
+    border: 1px solid white;
+    border-radius: 4px;
+}
+
+.submit-btn {
+    display: inline-block;
+    color: white;
+    padding: none;
+    border: 1px solid white;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.submit-btn:hover {
+    background-color: #d3d3d3;
+    box-shadow: 0 2px 2px 0 rgb(211, 211, 211), 0 2px 2px 0 rgb(211, 211, 211);
+}
+
+.sky {
+    font-size: 16px;
+    text-align: left;
+    font-weight: bolder;
+    margin: 10px 0px;
+}
+
+.weather-conditions {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: left;
+}
+
+.weekly-weather {
+    text-align: center;
+    margin-top: 40px;
+}
