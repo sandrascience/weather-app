@@ -17,6 +17,7 @@ h1 {
 
 .city {
     font-weight: bolder;
+    margin-right: 7px;
 }
 
 .time {
@@ -89,7 +90,7 @@ h1 {
     text-align: left;
 }
 
-.weekly-weather {
+.forecast-weather {
     text-align: center;
     margin-top: 40px;
 }
@@ -100,7 +101,7 @@ h1 {
     line-height: 2;
 }
 .weather-app-wrapper {
-    max-width: 640px;
+    max-width: 740px;
     margin: 30px auto;
 }
 
@@ -115,4 +116,20 @@ h1 {
     margin-right: 5px;
     height: 64px;
     width: 64px;
+}
+a:link {
+    text-decoration: none;
+}
+
+a:link:hover {
+    text-decoration: underline;
+}
+
+.city-temperature .active {
+    color: black;
+    cursor: default;
+}
+
+.city-temperature .active:hover {
+    text-decoration: none;
 }

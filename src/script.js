@@ -42,7 +42,7 @@ function getCurrentDate(dateInput) {
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat","Sun"];
 
   let forecastHTML = `<div class="row">`;
   days.forEach(function (day) {
@@ -66,9 +66,9 @@ element.innerHTML = getCurrentDate(today);
 function showWeather(response) {
   console.log(response.data.name);
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = ` ${Math.round(
+  document.querySelector("#temperature").innerHTML = `${Math.round(
     response.data.main.temp
-  )} <sup>ºC</sup>`;
+  )}`;
 
   document.querySelector(
     "#humidity"
@@ -88,6 +88,8 @@ function showWeather(response) {
 
   document.querySelector("#icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   document.querySelector("#icon").setAttribute("alt", response.data.weather[0].main);
+
+  celsiusTemp = Math.round(response.data.main.temp);
 }
 
 
@@ -114,12 +116,42 @@ function getCurrentLocationWeather(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+
+  let temperatureElement = document.querySelector("#temperature");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let tempFahrenheit = (celsiusTemp * 1.8) + 32;
+  temperatureElement.innerHTML = Math.round(tempFahrenheit); 
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+
+  let temperatureElement = document.querySelector("#temperature");
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  temperatureElement.innerHTML = celsiusTemp;
+
+}
+
+let celsiusTemp = null;
+
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchCity);
 
 let currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", getCurrentLocationWeather);
 
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+displayForecast();
 
 search("lisbon");
-displayForecast();
