@@ -11,9 +11,12 @@ ul {
 h1 {
     padding: 4px;
     font-size: 32px;
-    font-weight: bolder;
     text-align: center;
-    
+
+}
+
+.city {
+    font-weight: bolder;
 }
 
 .time {
@@ -105,6 +108,11 @@ h1 {
     background-color: #82c0ba;
     border: 1px solid #d3d3d3;
     border-radius: 10px;
-    padding: 60px;
-    max-height: 500px;
+    padding: 20px;
+}
+
+.city-temperature img {
+    margin-right: 5px;
+    height: 64px;
+    width: 64px;
 }
