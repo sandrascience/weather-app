@@ -39,6 +39,28 @@ function getCurrentDate(dateInput) {
   return liveDate;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `  
+  <div class = "col-2">    
+          <div class="forecast-day"><strong>${day}</strong></div>
+          <div class="forecast-temperatura">16ºC</div>
+          <div class="forecat-icon"><i class="fa-solid fa-cloud"></i></div>
+  </div>
+      `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
 let element = document.querySelector("#current-date");
 element.innerHTML = getCurrentDate(today);
 
@@ -65,6 +87,8 @@ function showWeather(response) {
     response.data.main.temp_min
   )} ºC </strong>`;
 }
+
+
 function search(city) {
   let apiKey = "6cc08a8adb2ba35d34299b6d46a01c22";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -94,4 +118,6 @@ searchForm.addEventListener("submit", searchCity);
 let currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", getCurrentLocationWeather);
 
+
 search("lisbon");
+displayForecast();
