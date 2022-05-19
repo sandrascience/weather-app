@@ -18,17 +18,22 @@ h1 {
 .city {
     font-weight: bolder;
     margin-right: 7px;
+    transition-duration: 0.4s;
+}
+
+.city:hover{
+    font-size: larger;
 }
 
 .time {
+    text-align: center;
     font-size: 16px;
-    margin-left: 14px;
     font-weight: bold;
 }
 
 .max-min {
+    text-align: center;
     font-size: 12px;
-    margin-left: 36px;
     margin-top: 15px;
 }
 
@@ -106,7 +111,7 @@ h1 {
 }
 
 .weather-app {
-    background-color: #7db0ab;
+    background-color: #8fc0bb;
     border: 1px solid #d3d3d3;
     border-radius: 10px;
     padding: 20px;
@@ -120,6 +125,7 @@ h1 {
 
 .weather-conditions-wrapper {
     margin-top: 20px;
+    padding-left: 60px;
 }
 
 .forecast-temperature-max {
