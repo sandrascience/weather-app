@@ -60,6 +60,12 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+  let apiKey = "6cc08a8adb2ba35d34299b6d46a01c22";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 let element = document.querySelector("#current-date");
 element.innerHTML = getCurrentDate(today);
 
@@ -90,6 +96,8 @@ function showWeather(response) {
   document.querySelector("#icon").setAttribute("alt", response.data.weather[0].main);
 
   celsiusTemp = Math.round(response.data.main.temp);
+
+  getForecast(response.data.coord);
 }
 
 
@@ -151,7 +159,5 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
-
-displayForecast();
 
 search("lisbon");
