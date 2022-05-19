@@ -126,7 +126,7 @@ a:link:hover {
 }
 
 .city-temperature .active {
-    color: black;
+    color: white;
     cursor: default;
 }
 
@@ -136,4 +136,13 @@ a:link:hover {
 
 .weather-conditions-wrapper {
     margin-top: 20px;
+}
+
+.forecast-temperature-max {
+    font-size: 14px;
+}
+
+.forecast-temperature-min {
+    font-size: 14px;
+    opacity: 0.7;
 }
